@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cube Animation</title>
+    <style>
+        body{
+            background-color: cadetblue;
+        }
+        .wrapper{
+            width: 200px;
+            height: 200px;
+            margin: 15% auto;
+        }
+        .cube {
+           animation: cubii 10s ease-in-out  infinite;
+           transform-style: preserve-3d;
+           transform-origin: 100px 100px 0;
+        }
+
+        .cube div{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+        }
+        .one {
+            background-image: url(1.jpg);
+            background-size: cover ;
+            background-position: center center;
+            transform: translateZ(100px);
+        }
+
+        .two {
+            background-image: url(2.png);
+            background-size: cover ;
+            background-position: center center;
+            transform: rotateY(90deg) translateZ(100px);
+        }
+
+        .three {
+            background-image: url(3.jpg);
+            background-size: cover ;
+            background-position: center center;
+            transform: rotateY(90deg) rotateX(90deg) translateZ(100px);
+        }
+
+        .four {
+            background-image: url(4.jpg);
+            background-size: cover ;
+            background-position: center center;
+            transform:  rotateY(180deg) rotateZ(90deg) translateZ(100px);
+        }
+
+        .five {
+            background-image: url(5.jpeg);
+            background-size: cover ;
+            background-position: center center;
+            transform:  rotateY(-90deg) rotateZ(90deg) translateZ(100px);
+        }
+
+        .six {
+            background-image: url(6.png);
+            background-size: cover ;
+            background-position: center center;
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+
+        @keyframes cubii{
+            from,to{
+                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            }
+            16%{
+                transform: rotateY(-90deg);
+            }
+            33%{
+                transform: rotateY(-90deg) rotateZ(90deg);
+            }
+            50%{
+                transform: rotateY(-180deg) rotateZ(90deg);
+            }
+            66%{
+                transform: rotateY(-270deg) rotateZ(90deg);
+            }
+            83%{
+                transform: rotateX(90deg) ;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="cube">
+            <div class="face one"></div>
+            <div class="face two"></div>
+            <div class="face three"></div>
+            <div class="face four"></div>
+            <div class="face five"></div>
+            <div class="face six"></div>
+        </div>
+    </div>
+</body>
+
+</html>
